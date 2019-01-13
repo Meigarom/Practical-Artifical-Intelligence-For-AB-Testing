@@ -12,5 +12,7 @@ However, it's nearly impossible to test all combination of features to build a w
 Reinformance learning is a possible solution. This repos contains the codes about build a AI Agent to perform a A/B testing using two versions of a web page.
 
 ## Traditional A/B Testing
+You have researched methods to do it and discovered a technique called A/B testing. This technique says that you should equally split your website traffic for each version of the homepage that you want to test. This division should be made randomly, and after a time span, you need to measure the number of clicks from the tested versions and decide which one is the winner.
+
 
 ## A/B Testing with Artificial Intelligence ( AI ) Agent
