@@ -1,5 +1,5 @@
 # Practical Artifical Intelligence For A/B Testing
-Apply AI algorithms to leverage the power of A/B testing
+## Apply AI algorithms to leverage the power of A/B testing
 
 <img src='img/cover.jpg' alt='drawing' width='100%' />
 
