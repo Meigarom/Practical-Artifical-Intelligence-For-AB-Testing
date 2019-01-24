@@ -16,4 +16,6 @@ You have researched methods to do it and discovered a technique called A/B testi
 
 
 ## A/B Testing with Artificial Intelligence ( AI ) Agent
-The main difference here is the presence of the Agent.
+The idea of th A/B testing with AI Agent is slightly different. The major difference is the
+presence of the Agent. Based on a strategy, it selects which version of a homepage should be
+displayed to the visitors.
