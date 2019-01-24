@@ -16,3 +16,4 @@ You have researched methods to do it and discovered a technique called A/B testi
 
 
 ## A/B Testing with Artificial Intelligence ( AI ) Agent
+The main difference here is the presence of the Agent.
