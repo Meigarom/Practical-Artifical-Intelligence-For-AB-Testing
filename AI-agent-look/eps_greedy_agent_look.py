@@ -19,7 +19,7 @@ class EpsGreedyAgent( object ):
 trials = 1000
 episodes = 200
 eps_init = 1
-decay = 0.05
+decay = 0.01
 
 # exponential decay
 eps_array = [( eps_init*(1-decay) )**i for i in range(trials)]
@@ -51,11 +51,9 @@ for episode in range( episodes ):
     for trial in range( trials ):
         eps = eps_array[ trial ]
 
-        #if random.uniform( 0.1, 0.0001 ) <= eps: # exploration mode
-        #    bandit_machine = np.random.randint( low=0, high=2, size=1 )[0]
         if eps >= 0.5: # exploration mode
             bandit_machine = np.random.randint( low=0, high=2, size=1 )[0]
-        else:                             # exploitation mode
+        else:          # exploitation mode
             prob_reward = reward_array / bandit_array
             max_prob_reward = np.where( prob_reward == np.max( prob_reward ) )[0]
             bandit_machine = max_prob_reward[0]
