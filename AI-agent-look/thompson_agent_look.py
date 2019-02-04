@@ -1,6 +1,6 @@
 # import libraries
-from scipy.stats import binom
-from matplotlib  import pyplot as plt
+from scipy.stats import binom, beta
+from matplotlib import pyplot as plt
 
 import numpy as np
 import random
@@ -21,7 +21,7 @@ class ThompsonAgent( object ):
 # experiment settings
 trials = 1000
 episodes = 200
-prob_list = [0.3, 0.8]
+prob_list = [0.7, 0.8]
 
 bandit = ThompsonAgent( prob_list )
 
@@ -42,7 +42,28 @@ for episode in range( episodes ):
 
     # iterate over trials
     for trial in range( trials ):
+        print( 'Trials: {}/{}'.format( trial, trials ) )
+        linestyles = ['-', '--']
+        x = np.linspace( 0, 1, 1002 )[1:-1]
+
+        #fig, ax = plt.subplots( figsize=( 5, 3.75 ) )
+        plt.clf()
+        plt.xlim( 0, 1 )
+        plt.ylim( 0, 30 )
+
+        for a, b, ls in zip( success_array, failure_array, linestyles ):
+            dist = beta( a, b )
+
+            plt.plot( x, dist.pdf( x ), ls=ls, c='black', 
+                      label=r'$\alpha=%.1f,\ \beta=%.1f$' % ( a, b ) )
+            plt.draw()
+            plt.pause( 0.001 )
+
+            plt.legend( loc= 0 )
+
+
         prob_reward = np.random.beta( success_array, failure_array )
+
         bandit_machine = np.argmax( prob_reward )
                 
         # get the reward
