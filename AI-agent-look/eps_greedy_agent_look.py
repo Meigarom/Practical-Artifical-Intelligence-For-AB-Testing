@@ -19,7 +19,7 @@ class EpsGreedyAgent( object ):
 trials = 1000
 episodes = 200
 eps_init = 1
-decay = 0.01
+decay = 0.05
 
 # exponential decay
 eps_array = [( eps_init*(1-decay) )**i for i in range(trials)]
