@@ -21,7 +21,7 @@ class ThompsonAgent( object ):
 # experiment settings
 trials = 1000
 episodes = 200
-prob_list = [0.7, 0.8]
+prob_list = [0.3, 0.8]
 
 bandit = ThompsonAgent( prob_list )
 
@@ -61,8 +61,12 @@ for episode in range( episodes ):
 
             plt.legend( loc= 0 )
 
+        print( 'Success: {}'.format( success_array ) )
+        print( 'Failure: {}'.format( failure_array ) )
 
         prob_reward = np.random.beta( success_array, failure_array )
+
+        print( 'Prob Reward: {}'.format( prob_reward ) )
 
         bandit_machine = np.argmax( prob_reward )
                 
