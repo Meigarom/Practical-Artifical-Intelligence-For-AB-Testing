@@ -77,6 +77,9 @@ for episode in range( episodes ):
         else:
             failure_array[ bandit_machine ] += 1
 
+        # plot
+        reward_prob( success_array, failure_array )
+
         # save partial results
         bandit_array[ bandit_machine ] += 1
         accumulated_reward += reward
